@@ -7,33 +7,34 @@ extends Resource
 
 #### Behaviors we can pick ####
 enum Behavior {
-	None = 0,
+	Default = 0,
 	Rabbit = 1,
 	Hedgehog = 2,
 	Cat = 3,
 }
 
-@abstract class PetBehavior:
-	@abstract func get_sound() -> String
+class Pet extends Node:
+	var pet_name: String
+	var behavior: DefaultPetBehavior
 
-class None extends PetBehavior:
-	func get_sound():
+class DefaultPetBehavior:
+	func default():
 		return "Not defined"
 
-class Rabbit extends PetBehavior:
+class Rabbit extends DefaultPetBehavior:
 	func get_sound():
 		return "pyon"
 
-class Hedgehog extends PetBehavior:
+class Hedgehog extends DefaultPetBehavior:
 	func get_sound():
 		return "shushu"
 
-class Cat extends PetBehavior:
+class Cat extends DefaultPetBehavior:
 	func get_sound():
 		return "meow"
 
 var all_behaviors = {
-	Behavior.None: None,
+	Behavior.Default: DefaultPetBehavior,
 	Behavior.Rabbit: Rabbit,
 	Behavior.Hedgehog: Hedgehog,
 	Behavior.Cat: Cat,
