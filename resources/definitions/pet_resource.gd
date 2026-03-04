@@ -7,10 +7,10 @@ extends Resource
 
 #### Behaviors we can pick ####
 enum Behavior {
-	Default = 0,
-	Rabbit = 1,
-	Hedgehog = 2,
-	Cat = 3,
+	Default,
+	Rabbit,
+	Hedgehog,
+	Cat,
 }
 
 class Pet extends Node:

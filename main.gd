@@ -1,6 +1,6 @@
 extends Node2D
 
-var splochy = preload("res://pets/splochy.tres")
+var splochy = preload("res://resources/pets/splochy.tres")
 
 func _ready() -> void:
 	var animal = splochy.instantiate()
